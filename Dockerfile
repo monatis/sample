@@ -10,5 +10,6 @@ COPY process_results.py /app/process_results.py
 # Make scripts executable
 RUN chmod +x /app/main.py /app/process_results.py
 
-# Default entrypoint (can be overridden by command)
+# Default entrypoint and command (can be overridden by command in workflow)
 ENTRYPOINT ["python"]
+CMD ["/app/main.py"]
