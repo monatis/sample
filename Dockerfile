@@ -5,9 +5,10 @@ WORKDIR /app
 
 # Copy application files
 COPY main.py /app/main.py
+COPY process_results.py /app/process_results.py
 
-# Make main.py executable
-RUN chmod +x /app/main.py
+# Make scripts executable
+RUN chmod +x /app/main.py /app/process_results.py
 
-# Set the entrypoint
-ENTRYPOINT ["python", "/app/main.py"]
+# Default entrypoint (can be overridden by command)
+ENTRYPOINT ["python"]
